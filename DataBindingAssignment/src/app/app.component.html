@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+Enter User Name:
+<input type="text" [(ngModel)] = 'userName'(input)="EnableButton()"/>
+<p>UserName: {{userName}} </p>
+<button class="btn btn-primary" [disabled]="!allowedNewUser">Add User</button>
+<button class="btn btn-primary" (click)='OnReset()'>Reset</button>
+
+<button class="btn btn-primary" (click) = 'DisplayDetails()'>Display Details</button>
+<p *ngIf='display'>This is sample paragraph</p>
+<hr/>
+<h4 *ngIf='display'>Click Details</h4>
+<!-- <p *ngFor="let logclick of logclicks; let i = index;"><p>{{i}}</p>
+   <!-- <h5 *ngIf="i > 5">{{logclick.timeclick}}</h5>  -->
+   <!-- <h5 *ngIf="i <= 5">shdkfj</h5>  
+</p> -->
+<ul *ngFor="let item of logclicks; let i = index" [attr.data-index]="i">
+
+        <li *ngIf="(i < 4 ); else colordiv">Click {{i+1}} -> {{item.timeclick}}</li>
+        <ng-template #colordiv>
+            <p [ngStyle]="{backgroundColor:'blue'}" [ngClass] ="{log: true}" >Click {{i+1}} -> {{item.timeclick}}</p>
+        </ng-template>
+            </ul>
+            <select class="form-control" id="form_control_r2">
+        <option value="">Select</option>
+        <option value="1">Fixed</option>
+        <option value="2">Range</option>
+    </select>

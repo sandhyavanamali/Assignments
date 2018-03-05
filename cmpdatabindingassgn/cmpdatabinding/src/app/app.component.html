@@ -1,0 +1,19 @@
+<div class="row">
+        <app-game 
+        (gameStarted)='onGameStarted($event)'
+        (gameStopped)='onGameStopped($event)'
+        ></app-game>
+</div>
+<div class="clearfix"></div>
+<br/>
+
+<div class="row">
+    <div class="col-xs-12">
+        <app-even [evenvalue]="evenval"></app-even>
+    
+    </div>
+    <br/>
+    <div class="col-xs-12">
+        <app-odd [oddvalue]="oddval"></app-odd>
+    </div>
+  </div>
